@@ -15,6 +15,11 @@ const Welcome = () => {
                     <Text style={styles.txtButton}>Login</Text>
                 </View>
             </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={styles.bgButton}>
+                    <Text style={styles.txtButton}>Register</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     );
 };
