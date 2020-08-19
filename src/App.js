@@ -7,12 +7,15 @@ import {
   StatusBar,
 } from 'react-native';
 import Welcome from './pages/Welcome';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   return (
-    <View>
-      <Welcome />
+    <NavigationContainer>
+      <View>
+        <Welcome />
     </View>
+    </NavigationContainer>
   );
 };
 
