@@ -1,14 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { colors } from '../utils';
+import { colors } from '../../../utils';
 
-const ActionButton = ({title}) => {
+const Button = ({title}) => {
     return (
-        <View>
-            <TouchableOpacity style={styles.bgButton}>
-                <Text style={styles.txtButton}>{title}</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.bgButton}>
+            <Text style={styles.txtButton}>{title}</Text>
+        </TouchableOpacity>
     );
 };
 
@@ -27,4 +25,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ActionButton;
+export default Button;

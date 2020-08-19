@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import Ilustrations from '../../assets/image/ilustrations_welcome.svg';
-import ActionButton from '../../components/ActionButton';
+import ActionButton from './ActionButton';
 import { colors } from '../../utils';
 
 const Welcome = () => {
