@@ -6,14 +6,14 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import Welcome from './pages/Welcome';
+import Router from './router';
 import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   return (
     <NavigationContainer>
       <View>
-        <Welcome />
+        <Router />
     </View>
     </NavigationContainer>
   );
