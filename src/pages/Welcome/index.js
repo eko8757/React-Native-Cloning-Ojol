@@ -4,7 +4,10 @@ import ActionButton from './ActionButton';
 import { colors } from '../../utils';
 import { ilustrationsWelcome } from '../../assets';
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
+    const handleIntent = screen => {
+        navigation.navigate(screen);
+    };
     return (
         <View style={styles.wrapper.page}>
             <View style={styles.wrapper.ilustrations}>
@@ -12,8 +15,14 @@ const Welcome = () => {
             </View>
             <Text style={styles.text.txtTitle}>Selamat Datang!</Text>
             <Text style={styles.text.txtContent}>Silahkan nikmati layanan kami, namun sebelum itu dimohon untuk Login terlebih dahulu jika sudah memiliki akun.</Text>
-            <ActionButton title="Login" />
-            <ActionButton title="Register" />
+            <ActionButton 
+                title="Login" 
+                onPress={() => handleIntent('Login')}
+            />
+            <ActionButton
+                title="Register"
+                onPress={() => handleIntent('Register')}
+            />
         </View>
     );
 };

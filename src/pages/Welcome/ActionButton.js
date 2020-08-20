@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import { colors } from '../../utils';
 import { Button } from '../../components';
 
-const ActionButton = ({title}) => {
+const ActionButton = ({title, onPress}) => {
     return (
         <View>
-            <Button title={title}/>
+            <Button title={title} onPress={onPress} />
         </View>
     );
 };
