@@ -6,7 +6,9 @@ const Login = () => {
     return (
         <View style={styles.wrapper.page}>
             <Text>Login Page</Text>
+            <View style={styles.wrapper.space(48)} />
             <Input placeholder="Email.." />
+            <View style={styles.wrapper.space(16)} />
             <Input placeholder="Password.." />
         </View>
     );
@@ -18,6 +20,11 @@ const styles = {
             flex: 1,
             padding: 20,
             backgroundColor: 'white',
+        },
+        space: value => {
+            return {
+                height: value,
+            };
         },
     },
 };
