@@ -3,5 +3,7 @@ import Welcome from './Welcome';
 import Login from './Login';
 import Register from './Register';
 import Home from './Home';
+import Feed from './Feed';
+import Settings from './Settings';
 
-export {Splash, Welcome, Login, Register, Home};
+export {Splash, Welcome, Login, Register, Home, Feed, Settings};
