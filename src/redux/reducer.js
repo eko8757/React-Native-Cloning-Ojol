@@ -25,18 +25,26 @@ const RegisterReducer = (state = initialStateRegister, action) => {
 
 //login
 const initialStateLogin = {
-    title: 'Login',
+    form: {
+         email: '',
+        password: '',
+    },
 };
 
 const LoginReducer = (state = initialStateLogin, action) => {
+    if (action.type == 'SET_FORM') {
+        return {
+            ...state,
+            form: {
+                ...state.form,
+                [action.inputType] : action.inputValue,
+            },
+        };
+    }
     return state;
 };
 
-//global
-const initialState = {
-    name: 'Pak Eko',
-};
-
+//combine reducer
 const reducer = combineReducers({
     RegisterReducer,
     LoginReducer,
