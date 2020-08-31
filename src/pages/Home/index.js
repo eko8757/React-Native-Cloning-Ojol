@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Feed from '../Feed';
-import Settings from '../Settings';
+import { Feed, Settings } from '../../pages';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { colors } from '../../utils';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <Tab.Navigator initialRouteName="Feed"
             tabBarOptions={{
-                activeTintColor: '#e91e63',
+                activeTintColor: colors.colorPrimary,
             }}>
             <Tab.Screen
                 name="Feed"
@@ -20,7 +20,7 @@ const Home = () => {
                 tabBarLabel: 'Feed',
                 tabBarIcon: ({ color, size }) => (
                     <MaterialCommunityIcons name="home" color={color} size={size} />
-                    ),
+                ),
                 }}
             />
             <Tab.Screen
@@ -30,7 +30,7 @@ const Home = () => {
                 tabBarLabel: 'Settings',
                 tabBarIcon: ({ color, size }) => (
                     <MaterialCommunityIcons name="home" color={color} size={size} />
-                    ),
+                ),
                 }}    
             />
         </Tab.Navigator>
