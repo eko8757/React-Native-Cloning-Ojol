@@ -1,15 +1,42 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-import { Input } from '../../components';
+import React, { useState } from 'react'
+import { Text, View, ScrollView } from 'react-native'
+import { Input, Button } from '../../components';
 
 const Login = () => {
+
+    const [form, setForm] = useState ({
+        email: '',
+        password: '',
+    });
+
+    const sendData = () => {
+        console.log("Send Data Login: ", form);
+    };
+
+    const onChangeTextInput = (value, input) => {
+        setForm({
+            ...form,
+            [input]: value,
+        });
+    };
+
     return (
         <View style={styles.wrapper.page}>
-            <Text>Login Page</Text>
-            <View style={styles.wrapper.space(48)} />
-            <Input placeholder="Email.." />
-            <View style={styles.wrapper.space(16)} />
-            <Input placeholder="Password.." />
+            <ScrollView>
+                <View style={styles.wrapper.space(24)} />
+                <Input 
+                    placeholder="Email.."
+                    onChangeText={(value) => onChangeTextInput(value, 'email')}
+                />
+                <View style={styles.wrapper.space(16)} />
+                <Input
+                    placeholder="Password.."
+                    onChangeText={(value) => onChangeTextInput(value, 'password')}
+                    secureTextEntry={true}
+                />
+                <View style={styles.wrapper.space(32)} />
+                <Button title="Login" onPress={sendData} />
+            </ScrollView>
         </View>
     );
 };
