@@ -3,20 +3,40 @@ import { Text, View, ScrollView } from 'react-native';
 import { Input, Button } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
 import { setForm } from '../../redux';
+import auth from '@react-native-firebase/auth';
+import {firebase} from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const Register = () => {
 
     const {form} = useSelector(state => state.RegisterReducer);
     const dispatch = useDispatch();
+    const firestore_ref=firestore().collection('Users')
 
     const sendData = () => {
-        console.log("Send Data: ", form);
+        console.log("Send Data: ", form.email);
+        auth()
+            .createUserWithEmailAndPassword(form.email, form.password)
+            .then(() => {
+                alert('success');
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                    alert('That email address is already in use!');
+                }
+
+                if (error.code === 'auth/invalid-email') {
+                    alert('That email address is invalid!');
+                }
+
+                console.error(error);
+            });
     };
 
     const onChangeTextInput = (value, input) => {
         dispatch(setForm(input, value));
     };
-
+    
     return (
         <View style={styles.wrapper.page}>
             <ScrollView>
