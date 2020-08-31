@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Input, Button } from '../../components';
+import { useSelector } from 'react-redux';
 
 const Register = () => {
+
+    const globalState = useSelector((state) => state);
 
     const [form, setForm] = useState ({
         name: '',
@@ -25,6 +28,7 @@ const Register = () => {
     return (
         <View style={styles.wrapper.page}>
             <ScrollView>
+                <Text>{globalState.name}</Text>
                 <View style={styles.wrapper.space(24)} />
                 <Input
                     placeholder="Nama.."
