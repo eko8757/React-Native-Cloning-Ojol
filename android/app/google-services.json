@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "956484532634",
+    "firebase_url": "https://cloningojol.firebaseio.com",
+    "project_id": "cloningojol",
+    "storage_bucket": "cloningojol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956484532634:android:9cfcb05d762b5dd76b6223",
+        "android_client_info": {
+          "package_name": "com.cloningojol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956484532634-bu4bvvqq5h7r3irtmdrcmht6c76pkivh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cloningojol",
+            "certificate_hash": "856e191854b07c20458a6512df200543e5a3dda5"
+          }
+        },
+        {
+          "client_id": "956484532634-8pfbjf66uk68oasv5snvbcr5m1j4m21t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXSuR6e0s36ElkydHPW5P4qNOY8cr6vZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956484532634-8pfbjf66uk68oasv5snvbcr5m1j4m21t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
