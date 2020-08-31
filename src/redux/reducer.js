@@ -1,10 +1,25 @@
+import { combineReducers } from 'redux';
 
 //register
 const initialStateRegister = {
-    title: 'Register',
+    form: {
+        name: '',
+        email: '',
+        password: '',
+        password_verification: '',
+    },
 };
 
 const RegisterReducer = (state = initialStateRegister, action) => {
+    if (action.type === 'SET_FORM') {
+        return {
+            ...state,
+            form: {
+                ...state.form,
+                [action.inputType] : action.inputValue, 
+            },
+        };
+    }
     return state;
 };
 
@@ -22,8 +37,9 @@ const initialState = {
     name: 'Pak Eko',
 };
 
-const reducer = (state = initialState, action) => {
-    return state;
-};
+const reducer = combineReducers({
+    RegisterReducer,
+    LoginReducer,
+});
 
 export default reducer;

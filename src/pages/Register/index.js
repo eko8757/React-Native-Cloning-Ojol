@@ -1,34 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Input, Button } from '../../components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setForm } from '../../redux';
 
 const Register = () => {
 
-    const globalState = useSelector((state) => state);
-
-    const [form, setForm] = useState ({
-        name: '',
-        email: '',
-        password: '',
-        password_verification: '',
-    });
+    const {form} = useSelector(state => state.RegisterReducer);
+    const dispatch = useDispatch();
 
     const sendData = () => {
         console.log("Send Data: ", form);
     };
 
     const onChangeTextInput = (value, input) => {
-        setForm({
-            ...form,
-            [input]: value,
-        });
+        dispatch(setForm(input, value));
     };
 
     return (
         <View style={styles.wrapper.page}>
             <ScrollView>
-                <Text>{globalState.name}</Text>
                 <View style={styles.wrapper.space(24)} />
                 <Input
                     placeholder="Nama.."
