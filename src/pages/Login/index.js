@@ -3,14 +3,27 @@ import { Text, View, ScrollView } from 'react-native'
 import { Input, Button } from '../../components';
 import { setForm } from '../../redux';
 import { useSelector, useDispatch } from 'react-redux';
+import auth from '@react-native-firebase/auth';
+import {firebase} from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
-const Login = () => {
+const Login = ({navigation}) => {
 
     const {form} = useSelector(state => state.LoginReducer);
     const dispatch = useDispatch();
 
+    //login use firebase
     const sendData = () => {
-        console.log("Send Data Login: ", form);
+        console.log("Send Data Login: ", form.email);
+         auth()
+            .signInWithEmailAndPassword(form.email, form.password)
+            .then(() => {
+                alert('success');
+                navigation.navigate('Home');
+            })
+            .catch((error) => {
+                alert(error);
+            });
     };
 
     const onChangeTextInput = (value, input) => {

@@ -7,18 +7,20 @@ import auth from '@react-native-firebase/auth';
 import {firebase} from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-const Register = () => {
+const Register = ({navigation}) => {
 
     const {form} = useSelector(state => state.RegisterReducer);
     const dispatch = useDispatch();
     const firestore_ref=firestore().collection('Users')
 
+    //register use firebase
     const sendData = () => {
         console.log("Send Data: ", form.email);
         auth()
             .createUserWithEmailAndPassword(form.email, form.password)
             .then(() => {
                 alert('success');
+                navigation.navigate('Home');
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
