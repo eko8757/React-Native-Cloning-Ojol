@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, ImageBackground, Text } from 'react-native';
+import { View, Image, Text } from 'react-native';
 
 const Icons = ({icons}) => {
     return(
         <View>
-            <ImageBackground style={styles.images}>{icons}</ImageBackground>
+            <Image source={icons} />
         </View>
     );
 };

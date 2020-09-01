@@ -5,4 +5,5 @@ export const colors = {
     colorText: {
         colorTextDark: '#212121',
     },
+    colorIconBorder: '#EFEFEF'
 };

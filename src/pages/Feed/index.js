@@ -1,52 +1,105 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { motorCycle, vehicle, taxi } from '../../assets';
+import { colors } from '../../utils';
+import { ojolRide } from '../../assets';
 
 const Feed = () => {
     return (
-        <View style={styles.wrapper}>
-            <View style={styles.wrapperImages}>
-                <Image
-                    source={motorCycle}
-                    style={styles.imagesIcons}
-                />
-                <Text style={styles.textIcons}>Ojol-Bike</Text>
-            </View>
-            <View style={styles.wrapperImages}>
-                <Image
-                    source={vehicle}
-                    style={styles.imagesIcons}
-                />
-                <Text style={styles.textIcons}>Ojol-Car</Text>
-            </View>
-            <View style={styles.wrapperImages}>
-                <Image
-                    source={taxi}
-                    style={styles.imagesIcons}
-                />
-                <Text style={styles.textIcons}>Ojol-Taxi</Text>
+        <View style={styles.container}>
+            <View style={styles.wrapper}>
+                <View style={styles.wrapperContainer}>
+                    <View>
+                        <View style={styles.wrapperIconsTop}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                    <View>
+                        <View style={styles.wrapperIconsTop}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                    <View>
+                        <View style={styles.wrapperIconsTop}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                    <View>
+                        <View style={styles.wrapperIconsTop}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                </View>
+                <View style={styles.wrapperContainer}>
+                    <View>
+                        <View style={styles.wrapperIconsBottom}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                    <View>
+                        <View style={styles.wrapperIconsBottom}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                    <View>
+                        <View style={styles.wrapperIconsBottom}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                    <View>
+                        <View style={styles.wrapperIconsBottom}>
+                            <Image source={ojolRide} />
+                        </View>
+                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                    </View>
+                </View>
             </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: 'white',
+    },
     wrapper: {
         flexDirection: 'row',
         backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'space-around',
+        flexWrap: 'wrap',
+        marginHorizontal: 16,
+        marginTop: 18,
     },
-    wrapperImages: {
+    wrapperContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+        marginBottom: 18,
+    },
+    wrapperIconsTop: {
         borderWidth: 1,
-        width: 90,
-        height: 90,
-        padding: 4,
+        borderColor: colors.colorIconBorder,
+        width: 58,
+        height: 58,
         borderRadius: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        position: 'relative',
-        margin: 8,
+        backgroundColor: 'white',
+    },
+    wrapperIconsBottom: {
+        borderWidth: 1,
+        borderColor: colors.colorIconBorder,
+        width: 58,
+        height: 58,
+        borderRadius: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: 'white',
     },
     imagesIcons: {
@@ -54,8 +107,10 @@ const styles = StyleSheet.create({
         height: 50,
     },
     textIcons: {
-        fontSize: 14,
+        fontSize: 10,
         fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 6,
     },
 });
 
