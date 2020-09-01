@@ -19,6 +19,7 @@ import {
     sepakBola,
     ojolPayLogo
 } from '../../assets';
+import ButtonBanner from './ButtonBanner';
 
 const Home = () => {
     return (
@@ -119,10 +120,15 @@ const Home = () => {
                 <View style={styles.wrapperBanner}>
                     <View>
                         <Image source={sepakBola} style={styles.imgBanner}/>
+                        <View style={styles.imgBanner2}/>
                     </View>
                     <View style={styles.wrapperTxtBanner}>
                         <Text style={styles.textBanner1}>OJOL-NEWS</Text>
                         <Text style={styles.textBanner2}>Lorhbsdjfhb jbsjdfsu hbjshdfsu hiiu??</Text>
+                        <ButtonBanner
+                            title="READ" 
+                            onPress={() => alert('Read')}
+                        />
                     </View>
                 </View>
             </ScrollView>
@@ -253,11 +259,23 @@ const styles = StyleSheet.create({
     wrapperBanner: {
         paddingTop: 16,
         paddingHorizontal: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.colorDivider,
     },
     imgBanner: {
         height: 170,
         width: '100%',
         borderRadius: 8,
+    },
+    imgBanner2: {
+        height: '100%',
+        width: '100%',
+        borderRadius: 8,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        backgroundColor: 'black',
+        opacity: 0.2,
     },
     wrapperTxtBanner: {
         paddingTop: 16,
@@ -271,7 +289,7 @@ const styles = StyleSheet.create({
     textBanner2: {
         color: colors.colorText.colorTextGrey,
         fontSize: 14,
-        fontWeight: 'normal',
+        fontWeight: '500',
     },
 });
 
