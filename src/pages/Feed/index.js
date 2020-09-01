@@ -1,62 +1,71 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { colors } from '../../utils';
-import { ojolRide } from '../../assets';
+import { 
+    ojolRide,
+    ojolCar,
+    ojolBlueBird,
+    ojolSend,
+    ojolDeals,
+    ojolPulsa,
+    ojolFood,
+    ojolMore
+} from '../../assets';
 
 const Feed = () => {
     return (
         <View style={styles.container}>
             <View style={styles.wrapper}>
                 <View style={styles.wrapperContainer}>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsTop}>
                             <Image source={ojolRide} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-RIDE</Text>
                     </View>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolCar} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-CAR</Text>
                     </View>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolBlueBird} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-BLUEBIRD</Text>
                     </View>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolSend} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-SEND</Text>
                     </View>
                 </View>
                 <View style={styles.wrapperContainer}>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolDeals} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-DEALS</Text>
                     </View>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolPulsa} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-PULSA</Text>
                     </View>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolFood} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-FOOD</Text>
                     </View>
-                    <View>
+                    <View style={styles.wrapperIcons}>
                         <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolRide} />
+                            <Image source={ojolMore} />
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MENU</Text>
+                        <Text style={styles.textIcons}>OJOL-MORE</Text>
                     </View>
                 </View>
             </View>
@@ -73,7 +82,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: 'white',
         flexWrap: 'wrap',
-        marginHorizontal: 16,
         marginTop: 18,
     },
     wrapperContainer: {
@@ -81,6 +89,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: '100%',
         marginBottom: 18,
+    },
+    wrapperIcons: {
+        width: '25%',
+        alignItems: 'center',
     },
     wrapperIconsTop: {
         borderWidth: 1,
