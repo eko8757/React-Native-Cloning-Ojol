@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
 import { colors } from '../../utils';
 import { 
     ojolRide,
@@ -12,106 +12,120 @@ import {
     ojolMore,
     ojolSearch,
     ojolPromo,
-    ojolOPay,
     ojolPay,
     ojolNearby,
     ojolTopUp,
-    ojolMorePay
+    ojolMorePay,
+    sepakBola,
+    ojolPayLogo
 } from '../../assets';
 
 const Home = () => {
     return (
-        <View style={styles.container}>
-            {/* search */}
-            <View style={styles.search}>
-                <View style={styles.wrapperSearch}>
-                    <TextInput placeholder="Search.." style={styles.txtInput}/>
-                    <Image source={ojolSearch} style={styles.wrapperImgSearch}/>
-                </View>
-                <View style={styles.promo}>
-                    <Image source={ojolPromo}/>
-                </View>
-            </View>
-            {/* ojol pay */}
-            <View>
-                <View style={styles.oPaySection}>
-                    <Image source={ojolOPay} />
-                    <Text style={styles.txtOpay}>Rp. 50.000</Text>
-                </View>
-                <View style={styles.menuPay}>
-                    <View style={styles.menuPay2}>
-                        <Image source={ojolPay}/>
-                        <Text style={styles.txtOpay2}>Pay</Text>
+        <View style={{flex: 1}}>
+            <ScrollView style={styles.container}>
+                {/* search */}
+                <View style={styles.search}>
+                    <View style={styles.wrapperSearch}>
+                        <TextInput placeholder="Search.." style={styles.txtInput}/>
+                        <Image source={ojolSearch} style={styles.wrapperImgSearch}/>
                     </View>
-                    <View style={styles.menuPay2}>
-                        <Image source={ojolNearby}/>
-                        <Text style={styles.txtOpay2}>Nearby</Text>
-                    </View>
-                    <View style={styles.menuPay2}>
-                        <Image source={ojolTopUp}/>
-                        <Text style={styles.txtOpay2}>Top-Up</Text>
-                    </View>
-                    <View style={styles.menuPay2}>
-                        <Image source={ojolMorePay}/>
-                        <Text style={styles.txtOpay2}>More</Text>
+                    <View style={styles.promo}>
+                        <Image source={ojolPromo}/>
                     </View>
                 </View>
-            </View>
-            {/* menu */}
-            <View style={styles.wrapper}>
-                <View style={styles.wrapperContainer}>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolRide} />
-                        </View>
-                        <Text style={styles.textIcons}>OJOL-RIDE</Text>
+                {/* ojol pay */}
+                <View>
+                    <View style={styles.oPaySection}>
+                        <Image source={ojolPayLogo} />
+                        <Text style={styles.txtOpay}>Rp. 50.000</Text>
                     </View>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolCar} />
+                    <View style={styles.menuPay}>
+                        <View style={styles.menuPay2}>
+                            <Image source={ojolPay}/>
+                            <Text style={styles.txtOpay2}>Pay</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-CAR</Text>
-                    </View>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolBlueBird} />
+                        <View style={styles.menuPay2}>
+                            <Image source={ojolNearby}/>
+                            <Text style={styles.txtOpay2}>Nearby</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-BLUEBIRD</Text>
-                    </View>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsTop}>
-                            <Image source={ojolSend} />
+                        <View style={styles.menuPay2}>
+                            <Image source={ojolTopUp}/>
+                            <Text style={styles.txtOpay2}>Top-Up</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-SEND</Text>
+                        <View style={styles.menuPay2}>
+                            <Image source={ojolMorePay}/>
+                            <Text style={styles.txtOpay2}>More</Text>
+                        </View>
                     </View>
                 </View>
-                <View style={styles.wrapperContainer}>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolDeals} />
+                {/* menu */}
+                <View style={styles.wrapper}>
+                    <View style={styles.wrapperContainer}>
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsTop}>
+                                <Image source={ojolRide} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-RIDE</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-DEALS</Text>
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsTop}>
+                                <Image source={ojolCar} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-CAR</Text>
+                        </View>
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsTop}>
+                                <Image source={ojolBlueBird} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-BLUEBIRD</Text>
+                        </View>
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsTop}>
+                                <Image source={ojolSend} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-SEND</Text>
+                        </View>
                     </View>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolPulsa} />
+                    <View style={styles.wrapperContainer}>
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsBottom}>
+                                <Image source={ojolDeals} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-DEALS</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-PULSA</Text>
-                    </View>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolFood} />
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsBottom}>
+                                <Image source={ojolPulsa} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-PULSA</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-FOOD</Text>
-                    </View>
-                    <View style={styles.wrapperIcons}>
-                        <View style={styles.wrapperIconsBottom}>
-                            <Image source={ojolMore} />
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsBottom}>
+                                <Image source={ojolFood} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-FOOD</Text>
                         </View>
-                        <Text style={styles.textIcons}>OJOL-MORE</Text>
+                        <View style={styles.wrapperIcons}>
+                            <View style={styles.wrapperIconsBottom}>
+                                <Image source={ojolMore} />
+                            </View>
+                            <Text style={styles.textIcons}>OJOL-MORE</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
+                <View style={styles.divider}></View>
+                {/* news section */}
+                <View style={styles.wrapperBanner}>
+                    <View>
+                        <Image source={sepakBola} style={styles.imgBanner}/>
+                    </View>
+                    <View style={styles.wrapperTxtBanner}>
+                        <Text style={styles.textBanner1}>OJOL-NEWS</Text>
+                        <Text style={styles.textBanner2}>Lorhbsdjfhb jbsjdfsu hbjshdfsu hiiu??</Text>
+                    </View>
+                </View>
+            </ScrollView>
         </View>
     );
 };
@@ -166,6 +180,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: 6,
+        color: colors.colorText.colorTextDark,
     },
     txtInput: {
         borderWidth: 1,
@@ -199,7 +214,7 @@ const styles = StyleSheet.create({
     oPaySection: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor: colors.colorOpay,
+        backgroundColor: colors.colorPrimary,
         marginHorizontal: 17,
         borderTopLeftRadius: 4,
         borderTopRightRadius: 4,
@@ -215,7 +230,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginHorizontal: 17,
         justifyContent: 'space-around',
-        backgroundColor: colors.colorOpay2,
+        backgroundColor: colors.colorPrimaryDark,
         borderBottomLeftRadius: 4,
         borderBottomRightRadius: 4,
         paddingBottom: 14,
@@ -230,6 +245,33 @@ const styles = StyleSheet.create({
     menuPay2: {
         flex: 1,
         alignItems: 'center',
+    },
+    divider: {
+        height: 17,
+        backgroundColor: colors.colorDivider,
+    },
+    wrapperBanner: {
+        paddingTop: 16,
+        paddingHorizontal: 16,
+    },
+    imgBanner: {
+        height: 170,
+        width: '100%',
+        borderRadius: 8,
+    },
+    wrapperTxtBanner: {
+        paddingTop: 16,
+        paddingBottom: 20,
+    },
+    textBanner1: {
+        color: colors.colorText.colorTextDark,
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    textBanner2: {
+        color: colors.colorText.colorTextGrey,
+        fontSize: 14,
+        fontWeight: 'normal',
     },
 });
 
