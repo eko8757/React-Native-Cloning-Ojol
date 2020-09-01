@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { colors } from '../../utils';
 import { 
     ojolRide,
@@ -9,12 +9,24 @@ import {
     ojolDeals,
     ojolPulsa,
     ojolFood,
-    ojolMore
+    ojolMore,
+    ojolSearch,
+    ojolPromo
 } from '../../assets';
 
 const Home = () => {
     return (
         <View style={styles.container}>
+            <View style={styles.search}>
+                <View style={styles.wrapperSearch}>
+                    <TextInput placeholder="Search.." style={styles.txtInput}/>
+                    <Image source={ojolSearch} style={styles.wrapperImgSearch}/>
+                </View>
+                <View style={styles.promo}>
+                    <Image source={ojolPromo}/>
+                </View>
+            </View>
+
             <View style={styles.wrapper}>
                 <View style={styles.wrapperContainer}>
                     <View style={styles.wrapperIcons}>
@@ -123,6 +135,35 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginTop: 6,
+    },
+    txtInput: {
+        borderWidth: 1,
+        borderColor: colors.colorIconBorder,
+        borderRadius: 25,
+        height: 40,
+        fontSize: 12,
+        paddingLeft: 45,
+        paddingRight: 20,
+        marginRight: 18,
+    },
+    search: {
+        marginHorizontal: 17,
+        flexDirection: 'row',
+        marginTop: 16,
+    },
+    wrapperSearch: {
+        flex: 1,
+        position: 'relative',
+    },
+    wrapperImgSearch: {
+        position: 'absolute',
+        top: 7,
+        left: 12,
+    },
+    promo: {
+        width: 35,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
 
