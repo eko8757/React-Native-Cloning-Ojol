@@ -5,5 +5,7 @@ export const colors = {
     colorText: {
         colorTextDark: '#212121',
     },
-    colorIconBorder: '#EFEFEF'
+    colorIconBorder: '#EFEFEF',
+    colorOpay: '#2C5FB8',
+    colorOpay2: '#2F65BD',
 };

@@ -11,12 +11,18 @@ import {
     ojolFood,
     ojolMore,
     ojolSearch,
-    ojolPromo
+    ojolPromo,
+    ojolOPay,
+    ojolPay,
+    ojolNearby,
+    ojolTopUp,
+    ojolMorePay
 } from '../../assets';
 
 const Home = () => {
     return (
         <View style={styles.container}>
+            {/* search */}
             <View style={styles.search}>
                 <View style={styles.wrapperSearch}>
                     <TextInput placeholder="Search.." style={styles.txtInput}/>
@@ -26,7 +32,32 @@ const Home = () => {
                     <Image source={ojolPromo}/>
                 </View>
             </View>
-
+            {/* ojol pay */}
+            <View>
+                <View style={styles.oPaySection}>
+                    <Image source={ojolOPay} />
+                    <Text style={styles.txtOpay}>Rp. 50.000</Text>
+                </View>
+                <View style={styles.menuPay}>
+                    <View style={styles.menuPay2}>
+                        <Image source={ojolPay}/>
+                        <Text style={styles.txtOpay2}>Pay</Text>
+                    </View>
+                    <View style={styles.menuPay2}>
+                        <Image source={ojolNearby}/>
+                        <Text style={styles.txtOpay2}>Nearby</Text>
+                    </View>
+                    <View style={styles.menuPay2}>
+                        <Image source={ojolTopUp}/>
+                        <Text style={styles.txtOpay2}>Top-Up</Text>
+                    </View>
+                    <View style={styles.menuPay2}>
+                        <Image source={ojolMorePay}/>
+                        <Text style={styles.txtOpay2}>More</Text>
+                    </View>
+                </View>
+            </View>
+            {/* menu */}
             <View style={styles.wrapper}>
                 <View style={styles.wrapperContainer}>
                     <View style={styles.wrapperIcons}>
@@ -164,6 +195,41 @@ const styles = StyleSheet.create({
         width: 35,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    oPaySection: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: colors.colorOpay,
+        marginHorizontal: 17,
+        borderTopLeftRadius: 4,
+        borderTopRightRadius: 4,
+        padding: 14,
+        marginTop: 8,
+    },
+    txtOpay: {
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
+    menuPay: {
+        flexDirection: 'row',
+        marginHorizontal: 17,
+        justifyContent: 'space-around',
+        backgroundColor: colors.colorOpay2,
+        borderBottomLeftRadius: 4,
+        borderBottomRightRadius: 4,
+        paddingBottom: 14,
+        paddingTop: 20,
+    },
+    txtOpay2: {
+        color: 'white',
+        fontSize: 12,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    menuPay2: {
+        flex: 1,
+        alignItems: 'center',
     },
 });
 
